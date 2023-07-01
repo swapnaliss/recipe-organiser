@@ -8,6 +8,7 @@ const RecipeForm = ({ addRecipe }) => {
         cuisine: '',
         ingredients: '',
         instructions: '',
+        image: '',
     });
     const navigate = useNavigate();
 
@@ -24,6 +25,19 @@ const RecipeForm = ({ addRecipe }) => {
 
     const handleChange = (e) => {
         setRecipe({ ...recipe, [e.target.name]: e.target.value });
+    };
+
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setRecipe({ ...recipe, image: reader.result });
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
     };
 
     return (
@@ -45,6 +59,10 @@ const RecipeForm = ({ addRecipe }) => {
                 <Form.Group>
                     <Form.Label>Instructions:</Form.Label>
                     <Form.Control as="textarea" name="instructions" value={recipe.instructions} onChange={handleChange} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Image:</Form.Label>
+                    <Form.Control type="file" accept="image/*" onChange={handleImageUpload} />
                 </Form.Group>
                 <Button type="submit">Add</Button>
             </Form>

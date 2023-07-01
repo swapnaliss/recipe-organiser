@@ -5,12 +5,14 @@ import RecipeList from "./components/RecipeList";
 import RecipeDetail from "./components/RecipeDetail";
 import RecipeForm from "./components/RecipeForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 const recipesData = [
   {
     "id": "1",
     "name": "Spaghetti Bolognese",
     "cuisine": "Italian",
+    "image":"https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
     "ingredients": [
       "spaghetti",
       "ground beef",
@@ -29,6 +31,7 @@ const recipesData = [
     "id": "2",
     "name": "Chicken Curry",
     "cuisine": "Indian",
+    "image":"https://media.istockphoto.com/id/1457889029/photo/group-of-food-with-high-content-of-dietary-fiber-arranged-side-by-side.jpg?b=1&s=612x612&w=0&k=20&c=BON5S0uDJeCe66N9klUEw5xKSGVnFhcL8stPLczQd_8=",
     "ingredients": [
       "chicken",
       "onion",
@@ -47,6 +50,7 @@ const recipesData = [
     "id": "3",
     "name": "Caprese Salad",
     "cuisine": "Italian",
+    "image": "https://thumbs.dreamstime.com/b/heart-shape-various-vegetables-fruits-healthy-food-concept-isolated-white-background-140287808.jpg",
     "ingredients": [
       "tomatoes",
       "mozzarella cheese",
